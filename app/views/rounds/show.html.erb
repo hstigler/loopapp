@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Identifier:</strong>
+  <%= @round.identifier %>
+</p>
+
+<p>
+  <strong>Starthole:</strong>
+  <%= @round.startHole %>
+</p>
+
+<p>
+  <strong>Endhole:</strong>
+  <%= @round.endHole %>
+</p>
+
+<p>
+  <strong>Score:</strong>
+  <%= @round.score %>
+</p>
+
+<%= link_to 'Edit', edit_round_path(@round) %> |
+<%= link_to 'Back', rounds_path %>

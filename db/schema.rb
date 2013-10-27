@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131027194510) do
+ActiveRecord::Schema.define(version: 20131027200207) do
 
   create_table "clubs", force: true do |t|
     t.integer  "identifier"
@@ -25,6 +25,15 @@ ActiveRecord::Schema.define(version: 20131027194510) do
 
   create_table "round_holes", force: true do |t|
     t.integer  "identifier"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "rounds", force: true do |t|
+    t.integer  "identifier"
+    t.integer  "startHole"
+    t.integer  "endHole"
+    t.integer  "score"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
