@@ -1,4 +1,6 @@
 Loopapp::Application.routes.draw do
+  resources :holes
+
   resources :courses
 
   resources :tees
