@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  identifier: 1
+  startLat: 1.5
+  startLon: 1.5
+  endLat: 1.5
+  endLon: 1.5
+  score: 1
+  lie: 1
+  time: 2013-10-27 15:41:22
+
+two:
+  identifier: 1
+  startLat: 1.5
+  startLon: 1.5
+  endLat: 1.5
+  endLon: 1.5
+  score: 1
+  lie: 1
+  time: 2013-10-27 15:41:22

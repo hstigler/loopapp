@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Identifier:</strong>
+  <%= @shot.identifier %>
+</p>
+
+<p>
+  <strong>Startlat:</strong>
+  <%= @shot.startLat %>
+</p>
+
+<p>
+  <strong>Startlon:</strong>
+  <%= @shot.startLon %>
+</p>
+
+<p>
+  <strong>Endlat:</strong>
+  <%= @shot.endLat %>
+</p>
+
+<p>
+  <strong>Endlon:</strong>
+  <%= @shot.endLon %>
+</p>
+
+<p>
+  <strong>Score:</strong>
+  <%= @shot.score %>
+</p>
+
+<p>
+  <strong>Lie:</strong>
+  <%= @shot.lie %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @shot.time %>
+</p>
+
+<%= link_to 'Edit', edit_shot_path(@shot) %> |
+<%= link_to 'Back', shots_path %>

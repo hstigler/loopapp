@@ -1,0 +1,49 @@
+<%= form_for(@shot) do |f| %>
+  <% if @shot.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@shot.errors.count, "error") %> prohibited this shot from being saved:</h2>
+
+      <ul>
+      <% @shot.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :identifier %><br>
+    <%= f.number_field :identifier %>
+  </div>
+  <div class="field">
+    <%= f.label :startLat %><br>
+    <%= f.text_field :startLat %>
+  </div>
+  <div class="field">
+    <%= f.label :startLon %><br>
+    <%= f.text_field :startLon %>
+  </div>
+  <div class="field">
+    <%= f.label :endLat %><br>
+    <%= f.text_field :endLat %>
+  </div>
+  <div class="field">
+    <%= f.label :endLon %><br>
+    <%= f.text_field :endLon %>
+  </div>
+  <div class="field">
+    <%= f.label :score %><br>
+    <%= f.number_field :score %>
+  </div>
+  <div class="field">
+    <%= f.label :lie %><br>
+    <%= f.number_field :lie %>
+  </div>
+  <div class="field">
+    <%= f.label :time %><br>
+    <%= f.datetime_select :time %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

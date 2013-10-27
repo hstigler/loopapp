@@ -1,0 +1,41 @@
+<h1>Listing shots</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Identifier</th>
+      <th>Startlat</th>
+      <th>Startlon</th>
+      <th>Endlat</th>
+      <th>Endlon</th>
+      <th>Score</th>
+      <th>Lie</th>
+      <th>Time</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @shots.each do |shot| %>
+      <tr>
+        <td><%= shot.identifier %></td>
+        <td><%= shot.startLat %></td>
+        <td><%= shot.startLon %></td>
+        <td><%= shot.endLat %></td>
+        <td><%= shot.endLon %></td>
+        <td><%= shot.score %></td>
+        <td><%= shot.lie %></td>
+        <td><%= shot.time %></td>
+        <td><%= link_to 'Show', shot %></td>
+        <td><%= link_to 'Edit', edit_shot_path(shot) %></td>
+        <td><%= link_to 'Destroy', shot, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Shot', new_shot_path %>
