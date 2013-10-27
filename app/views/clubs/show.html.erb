@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Identifier:</strong>
+  <%= @club.identifier %>
+</p>
+
+<p>
+  <strong>Make:</strong>
+  <%= @club.make %>
+</p>
+
+<p>
+  <strong>Model:</strong>
+  <%= @club.model %>
+</p>
+
+<p>
+  <strong>Order:</strong>
+  <%= @club.order %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @club.name %>
+</p>
+
+<%= link_to 'Edit', edit_club_path(@club) %> |
+<%= link_to 'Back', clubs_path %>
