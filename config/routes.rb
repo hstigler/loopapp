@@ -1,4 +1,6 @@
 Loopapp::Application.routes.draw do
+  resources :round_holes
+
   resources :shots
 
   resources :clubs

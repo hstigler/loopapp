@@ -1,0 +1,21 @@
+<%= form_for(@round_hole) do |f| %>
+  <% if @round_hole.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@round_hole.errors.count, "error") %> prohibited this round_hole from being saved:</h2>
+
+      <ul>
+      <% @round_hole.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :identifier %><br>
+    <%= f.number_field :identifier %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,27 @@
+<h1>Listing round_holes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Identifier</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @round_holes.each do |round_hole| %>
+      <tr>
+        <td><%= round_hole.identifier %></td>
+        <td><%= link_to 'Show', round_hole %></td>
+        <td><%= link_to 'Edit', edit_round_hole_path(round_hole) %></td>
+        <td><%= link_to 'Destroy', round_hole, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Round hole', new_round_hole_path %>
