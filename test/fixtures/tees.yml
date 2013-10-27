@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  identifier: 1
+  name: 1
+  distance: 1
+  courseRating: 1.5
+  slopeRating: 1
+
+two:
+  identifier: 1
+  name: 1
+  distance: 1
+  courseRating: 1.5
+  slopeRating: 1

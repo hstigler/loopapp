@@ -1,0 +1,35 @@
+<h1>Listing tees</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Identifier</th>
+      <th>Name</th>
+      <th>Distance</th>
+      <th>Courserating</th>
+      <th>Sloperating</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tees.each do |tee| %>
+      <tr>
+        <td><%= tee.identifier %></td>
+        <td><%= tee.name %></td>
+        <td><%= tee.distance %></td>
+        <td><%= tee.courseRating %></td>
+        <td><%= tee.slopeRating %></td>
+        <td><%= link_to 'Show', tee %></td>
+        <td><%= link_to 'Edit', edit_tee_path(tee) %></td>
+        <td><%= link_to 'Destroy', tee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tee', new_tee_path %>

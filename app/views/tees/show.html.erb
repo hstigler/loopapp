@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Identifier:</strong>
+  <%= @tee.identifier %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @tee.name %>
+</p>
+
+<p>
+  <strong>Distance:</strong>
+  <%= @tee.distance %>
+</p>
+
+<p>
+  <strong>Courserating:</strong>
+  <%= @tee.courseRating %>
+</p>
+
+<p>
+  <strong>Sloperating:</strong>
+  <%= @tee.slopeRating %>
+</p>
+
+<%= link_to 'Edit', edit_tee_path(@tee) %> |
+<%= link_to 'Back', tees_path %>

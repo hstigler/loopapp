@@ -1,4 +1,6 @@
 Loopapp::Application.routes.draw do
+  resources :tees
+
   resources :rounds
 
   resources :round_holes
