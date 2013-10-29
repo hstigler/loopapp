@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  identifier: 1
+  firstName: MyString
+  lastName: MyString
+  handicap: 1
+
+two:
+  identifier: 1
+  firstName: MyString
+  lastName: MyString
+  handicap: 1

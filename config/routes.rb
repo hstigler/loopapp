@@ -1,4 +1,6 @@
 Loopapp::Application.routes.draw do
+  resources :players
+
   resources :facilities
 
   resources :holes
