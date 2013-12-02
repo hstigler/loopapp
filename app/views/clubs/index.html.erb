@@ -1,9 +1,11 @@
+<div class="container">
 <h1>Listing clubs</h1>
 
 <table>
   <thead>
     <tr>
       <th>Identifier</th>
+      <th>Player_id</th>
       <th>Make</th>
       <th>Model</th>
       <th>Order</th>
@@ -18,6 +20,7 @@
     <% @clubs.each do |club| %>
       <tr>
         <td><%= club.identifier %></td>
+        <td><%= club.player_id %></td>
         <td><%= club.make %></td>
         <td><%= club.model %></td>
         <td><%= club.order %></td>
@@ -33,3 +36,4 @@
 <br>
 
 <%= link_to 'New Club', new_club_path %>
+</div>

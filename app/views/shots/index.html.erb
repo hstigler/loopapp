@@ -4,6 +4,8 @@
   <thead>
     <tr>
       <th>Identifier</th>
+      <th>Club_id</th>
+      <th>Round_hole_id</th>
       <th>Startlat</th>
       <th>Startlon</th>
       <th>Endlat</th>
@@ -21,6 +23,8 @@
     <% @shots.each do |shot| %>
       <tr>
         <td><%= shot.identifier %></td>
+        <td><%= shot.club_id %></td>
+        <td><%= shot.round_hole_id %></td>
         <td><%= shot.startLat %></td>
         <td><%= shot.startLon %></td>
         <td><%= shot.endLat %></td>

@@ -11,10 +11,14 @@
     </div>
   <% end %>
 
+<div class="container">
   <div class="field">
     <%= f.label :identifier %><br>
     <%= f.number_field :identifier %>
   </div>
+  <div class="field">
+    <%= f.label :player_id %><br>
+    <%= f.number_field :player_id %>
   <div class="field">
     <%= f.label :make %><br>
     <%= f.text_field :make %>
@@ -33,5 +37,6 @@
   </div>
   <div class="actions">
     <%= f.submit %>
+  </div>
   </div>
 <% end %>

@@ -4,6 +4,7 @@
   <thead>
     <tr>
       <th>Identifier</th>
+      <th>Facility_id</th>
       <th>Number</th>
       <th>Par</th>
       <th>Handicap</th>
@@ -17,6 +18,7 @@
     <% @holes.each do |hole| %>
       <tr>
         <td><%= hole.identifier %></td>
+        <td><%= hole.facility_id %></td>
         <td><%= hole.number %></td>
         <td><%= hole.par %></td>
         <td><%= hole.handicap %></td>

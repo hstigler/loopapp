@@ -4,6 +4,8 @@
   <thead>
     <tr>
       <th>Identifier</th>
+      <th>Round_id</th>
+      <th>Hole_id</th>
       <th></th>
       <th></th>
       <th></th>
@@ -14,6 +16,8 @@
     <% @round_holes.each do |round_hole| %>
       <tr>
         <td><%= round_hole.identifier %></td>
+        <td><%= round_hole.round_id %></td>
+        <td><%= round_hole.hole_id %></td>
         <td><%= link_to 'Show', round_hole %></td>
         <td><%= link_to 'Edit', edit_round_hole_path(round_hole) %></td>
         <td><%= link_to 'Destroy', round_hole, method: :delete, data: { confirm: 'Are you sure?' } %></td>

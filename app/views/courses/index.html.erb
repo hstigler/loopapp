@@ -4,6 +4,7 @@
   <thead>
     <tr>
       <th>Identifier</th>
+      <th>Facility_id</th>
       <th>Name</th>
       <th></th>
       <th></th>
@@ -15,6 +16,7 @@
     <% @courses.each do |course| %>
       <tr>
         <td><%= course.identifier %></td>
+        <td><%= course.facility_id %></td>
         <td><%= course.name %></td>
         <td><%= link_to 'Show', course %></td>
         <td><%= link_to 'Edit', edit_course_path(course) %></td>

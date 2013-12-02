@@ -4,6 +4,9 @@
   <thead>
     <tr>
       <th>Identifier</th>
+      <th>Tee_id</th>
+      <th>Player_id</th>
+      <th>Course_id</th>
       <th>Starthole</th>
       <th>Endhole</th>
       <th>Score</th>
@@ -17,6 +20,9 @@
     <% @rounds.each do |round| %>
       <tr>
         <td><%= round.identifier %></td>
+         <td><%= round.tee_id %></td>
+          <td><%= round.player_id %></td>
+           <td><%= round.course_id %></td>
         <td><%= round.startHole %></td>
         <td><%= round.endHole %></td>
         <td><%= round.score %></td>
