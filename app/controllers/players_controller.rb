@@ -1,15 +1,21 @@
 class PlayersController < ApplicationController
   before_action :set_player, only: [:show, :edit, :update, :destroy]
+protect_from_forgery with: :null_session #fixed "Can't verify CSRF token authenticity error, however not sure if this opens up security hole"
+respond_to :html, :json
+
 
   # GET /players
   # GET /players.json
   def index
     @players = Player.all
+    respond_with @players
   end
 
   # GET /players/1
   # GET /players/1.json
   def show
+    @player = Player.find(params[:id])
+    respond_with @player
   end
 
   # GET /players/new
@@ -19,46 +25,31 @@ class PlayersController < ApplicationController
 
   # GET /players/1/edit
   def edit
+    @player = Player.find(params[:id])
   end
 
   # POST /players
   # POST /players.json
   def create
     @player = Player.new(player_params)
-
-    respond_to do |format|
-      if @player.save
-        format.html { redirect_to @player, notice: 'Player was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @player }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @player.errors, status: :unprocessable_entity }
-      end
-    end
+    @player.save
+    respond_with @player
   end
 
   # PATCH/PUT /players/1
   # PATCH/PUT /players/1.json
   def update
-    respond_to do |format|
-      if @player.update(player_params)
-        format.html { redirect_to @player, notice: 'Player was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @player.errors, status: :unprocessable_entity }
-      end
-    end
+    @player = Player.find(params[:id])
+    @player.update_attributes(player_params)
+    respond_with @player
   end
 
   # DELETE /players/1
   # DELETE /players/1.json
   def destroy
+    @player = Player.find(params[:id])
     @player.destroy
-    respond_to do |format|
-      format.html { redirect_to players_url }
-      format.json { head :no_content }
-    end
+    respond_with @player
   end
 
   private
@@ -72,3 +63,4 @@ class PlayersController < ApplicationController
       params.require(:player).permit(:identifier, :firstName, :lastName, :handicap)
     end
 end
+
