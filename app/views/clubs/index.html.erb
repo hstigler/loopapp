@@ -4,6 +4,7 @@
 <table>
   <thead>
     <tr>
+      <th>Id</th>
       <th>Identifier</th>
       <th>Player_id</th>
       <th>Make</th>
@@ -19,6 +20,7 @@
   <tbody>
     <% @clubs.each do |club| %>
       <tr>
+        <td><%= club.id %></td>
         <td><%= club.identifier %></td>
         <td><%= club.player_id %></td>
         <td><%= club.make %></td>
