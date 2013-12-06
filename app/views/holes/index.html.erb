@@ -3,6 +3,7 @@
 <table>
   <thead>
     <tr>
+      <th>Id</th>
       <th>Identifier</th>
       <th>Facility_id</th>
       <th>Number</th>
@@ -17,6 +18,7 @@
   <tbody>
     <% @holes.each do |hole| %>
       <tr>
+        <td><%= hole.id %></td>
         <td><%= hole.identifier %></td>
         <td><%= hole.facility_id %></td>
         <td><%= hole.number %></td>

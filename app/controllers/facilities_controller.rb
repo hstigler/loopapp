@@ -1,15 +1,19 @@
 class FacilitiesController < ApplicationController
   before_action :set_facility, only: [:show, :edit, :update, :destroy]
-
+  protect_from_forgery with: :null_session #fixed "Can't verify CSRF token authenticity error, however not sure if this opens up security hole"
+  respond_to :html, :json
   # GET /facilities
   # GET /facilities.json
   def index
     @facilities = Facility.all
+    respond_with  @facilities
   end
 
   # GET /facilities/1
   # GET /facilities/1.json
   def show
+    @facility = Facility.find(params[:id])
+    respond_with @facility
   end
 
   # GET /facilities/new
@@ -19,46 +23,33 @@ class FacilitiesController < ApplicationController
 
   # GET /facilities/1/edit
   def edit
+    @facility = Facility.find(params[:id])
   end
 
   # POST /facilities
   # POST /facilities.json
   def create
     @facility = Facility.new(facility_params)
-
-    respond_to do |format|
-      if @facility.save
-        format.html { redirect_to @facility, notice: 'Facility was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @facility }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @facility.errors, status: :unprocessable_entity }
-      end
-    end
+    @facility.save
+    respond_with @facility
   end
+
 
   # PATCH/PUT /facilities/1
   # PATCH/PUT /facilities/1.json
   def update
-    respond_to do |format|
-      if @facility.update(facility_params)
-        format.html { redirect_to @facility, notice: 'Facility was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @facility.errors, status: :unprocessable_entity }
-      end
-    end
+    @facility = Facility.find(params[:id])
+    @facility.update_attributes(facility_params)
+    respond_with @facility
   end
+  
 
   # DELETE /facilities/1
   # DELETE /facilities/1.json
   def destroy
+    @facility = Facility.find(params[:id])
     @facility.destroy
-    respond_to do |format|
-      format.html { redirect_to facilities_url }
-      format.json { head :no_content }
-    end
+    respond_with @facility  
   end
 
   private

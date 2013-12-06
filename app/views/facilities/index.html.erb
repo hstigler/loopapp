@@ -3,6 +3,7 @@
 <table>
   <thead>
     <tr>
+      <th>Id</th>
       <th>Identifier</th>
       <th>Name</th>
       <th></th>
@@ -14,6 +15,7 @@
   <tbody>
     <% @facilities.each do |facility| %>
       <tr>
+        <td><%= facility.id %></td>
         <td><%= facility.identifier %></td>
         <td><%= facility.name %></td>
         <td><%= link_to 'Show', facility %></td>

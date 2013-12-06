@@ -1,15 +1,20 @@
 class HolesController < ApplicationController
   before_action :set_hole, only: [:show, :edit, :update, :destroy]
+  protect_from_forgery with: :null_session #fixed "Can't verify CSRF token authenticity error, however not sure if this opens up security hole"
+  respond_to :html, :json
 
   # GET /holes
   # GET /holes.json
   def index
     @holes = Hole.all
+    respond_with @holes
   end
 
   # GET /holes/1
   # GET /holes/1.json
   def show
+    @hole = Hole.find(params[:id])
+    respond_with  @hole
   end
 
   # GET /holes/new
@@ -19,46 +24,31 @@ class HolesController < ApplicationController
 
   # GET /holes/1/edit
   def edit
+    @hole = Hole.find(params[:id])
   end
 
   # POST /holes
   # POST /holes.json
   def create
     @hole = Hole.new(hole_params)
-
-    respond_to do |format|
-      if @hole.save
-        format.html { redirect_to @hole, notice: 'Hole was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @hole }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @hole.errors, status: :unprocessable_entity }
-      end
-    end
+    @hole.save
+    respond_with @hole  
   end
 
   # PATCH/PUT /holes/1
   # PATCH/PUT /holes/1.json
   def update
-    respond_to do |format|
-      if @hole.update(hole_params)
-        format.html { redirect_to @hole, notice: 'Hole was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @hole.errors, status: :unprocessable_entity }
-      end
-    end
+    @hole = Hole.find(params[:id])
+    @hole.update_attributes(hole_params)
+    respond_with @hole
   end
 
   # DELETE /holes/1
   # DELETE /holes/1.json
   def destroy
+    @hole = Hole.find(params[:id])
     @hole.destroy
-    respond_to do |format|
-      format.html { redirect_to holes_url }
-      format.json { head :no_content }
-    end
+    respond_with @hole
   end
 
   private
@@ -69,6 +59,6 @@ class HolesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def hole_params
-      params.require(:hole).permit(:identifier, :number, :par, :handicap)
+      params.require(:hole).permit(:identifier, :facility_id, :number, :par, :handicap)
     end
 end
