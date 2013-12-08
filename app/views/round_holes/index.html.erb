@@ -3,6 +3,7 @@
 <table>
   <thead>
     <tr>
+      <th>Id</th>
       <th>Identifier</th>
       <th>Round_id</th>
       <th>Hole_id</th>
@@ -15,6 +16,7 @@
   <tbody>
     <% @round_holes.each do |round_hole| %>
       <tr>
+        <td><%= round_hole.id %></td>
         <td><%= round_hole.identifier %></td>
         <td><%= round_hole.round_id %></td>
         <td><%= round_hole.hole_id %></td>

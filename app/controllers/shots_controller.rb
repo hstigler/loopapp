@@ -1,15 +1,20 @@
 class ShotsController < ApplicationController
   before_action :set_shot, only: [:show, :edit, :update, :destroy]
+  protect_from_forgery with: :null_session #fixed "Can't verify CSRF token authenticity error, however not sure if this opens up security hole"
+  respond_to :html, :json
 
   # GET /shots
   # GET /shots.json
   def index
     @shots = Shot.all
+    respond_with @shots
   end
 
   # GET /shots/1
   # GET /shots/1.json
   def show
+    @shot = Shot.find(params[:id])
+    respond_with @shot
   end
 
   # GET /shots/new
@@ -19,46 +24,31 @@ class ShotsController < ApplicationController
 
   # GET /shots/1/edit
   def edit
+    @shot = Shot.find(params[:id])
   end
 
   # POST /shots
   # POST /shots.json
   def create
     @shot = Shot.new(shot_params)
-
-    respond_to do |format|
-      if @shot.save
-        format.html { redirect_to @shot, notice: 'Shot was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @shot }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @shot.errors, status: :unprocessable_entity }
-      end
-    end
+    @shot.save
+    respond_with @shot
   end
 
   # PATCH/PUT /shots/1
   # PATCH/PUT /shots/1.json
   def update
-    respond_to do |format|
-      if @shot.update(shot_params)
-        format.html { redirect_to @shot, notice: 'Shot was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @shot.errors, status: :unprocessable_entity }
-      end
-    end
+    @shot = Shot.find(params[:id])
+    @shot.update_attributes(shot_params)
+    respond_with @shot
   end
 
   # DELETE /shots/1
   # DELETE /shots/1.json
   def destroy
+    @shot = Shot.find(params[:id])
     @shot.destroy
-    respond_to do |format|
-      format.html { redirect_to shots_url }
-      format.json { head :no_content }
-    end
+    respond_with @shot
   end
 
   private
@@ -69,6 +59,6 @@ class ShotsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def shot_params
-      params.require(:shot).permit(:identifier, :startLat, :startLon, :endLat, :endLon, :score, :lie, :time)
+      params.require(:shot).permit(:identifier, :club_id, :round_hole_id, :startLat, :startLon, :endLat, :endLon, :score, :lie, :time)
     end
 end

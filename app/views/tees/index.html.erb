@@ -3,6 +3,7 @@
 <table>
   <thead>
     <tr>
+      <th>Id</th>
       <th>Identifier</th>
       <th>Name</th>
       <th>Distance</th>
@@ -17,6 +18,7 @@
   <tbody>
     <% @tees.each do |tee| %>
       <tr>
+        <td><%= tee.id %></td>
         <td><%= tee.identifier %></td>
         <td><%= tee.name %></td>
         <td><%= tee.distance %></td>

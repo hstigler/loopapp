@@ -3,6 +3,7 @@
 <table>
   <thead>
     <tr>
+      <th>Id</th>
       <th>Identifier</th>
       <th>Tee_id</th>
       <th>Player_id</th>
@@ -19,6 +20,7 @@
   <tbody>
     <% @rounds.each do |round| %>
       <tr>
+        <td><%= round.id %></td>
         <td><%= round.identifier %></td>
          <td><%= round.tee_id %></td>
           <td><%= round.player_id %></td>

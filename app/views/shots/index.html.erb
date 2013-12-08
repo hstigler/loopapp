@@ -3,6 +3,7 @@
 <table>
   <thead>
     <tr>
+      <th>Id</th>
       <th>Identifier</th>
       <th>Club_id</th>
       <th>Round_hole_id</th>
@@ -22,6 +23,7 @@
   <tbody>
     <% @shots.each do |shot| %>
       <tr>
+        <td><%= shot.id %></td>
         <td><%= shot.identifier %></td>
         <td><%= shot.club_id %></td>
         <td><%= shot.round_hole_id %></td>

@@ -1,15 +1,20 @@
 class TeesController < ApplicationController
   before_action :set_tee, only: [:show, :edit, :update, :destroy]
+  protect_from_forgery with: :null_session #fixed "Can't verify CSRF token authenticity error, however not sure if this opens up security hole"
+  respond_to :html, :json
 
   # GET /tees
   # GET /tees.json
   def index
     @tees = Tee.all
+    respond_with @tees
   end
 
   # GET /tees/1
   # GET /tees/1.json
   def show
+    @tee = Tee.find(params[:id])
+    respond_with @tee
   end
 
   # GET /tees/new
@@ -19,46 +24,31 @@ class TeesController < ApplicationController
 
   # GET /tees/1/edit
   def edit
+    @tee = Tee.find(params[:id])
   end
 
   # POST /tees
   # POST /tees.json
   def create
     @tee = Tee.new(tee_params)
-
-    respond_to do |format|
-      if @tee.save
-        format.html { redirect_to @tee, notice: 'Tee was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @tee }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @tee.errors, status: :unprocessable_entity }
-      end
-    end
+    @tee.save
+    respond_with @tee
   end
 
   # PATCH/PUT /tees/1
   # PATCH/PUT /tees/1.json
   def update
-    respond_to do |format|
-      if @tee.update(tee_params)
-        format.html { redirect_to @tee, notice: 'Tee was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @tee.errors, status: :unprocessable_entity }
-      end
-    end
+    @tee = Tee.find(params[:id])
+    @tee.update_attributes(tee_params)
+    respond_with @tee
   end
 
   # DELETE /tees/1
   # DELETE /tees/1.json
   def destroy
+    @tee = Tee.find(params[:id])
     @tee.destroy
-    respond_to do |format|
-      format.html { redirect_to tees_url }
-      format.json { head :no_content }
-    end
+    respond_with @tee
   end
 
   private

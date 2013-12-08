@@ -1,15 +1,20 @@
 class RoundsController < ApplicationController
   before_action :set_round, only: [:show, :edit, :update, :destroy]
+  protect_from_forgery with: :null_session #fixed "Can't verify CSRF token authenticity error, however not sure if this opens up security hole"
+  respond_to :html, :json
 
   # GET /rounds
   # GET /rounds.json
   def index
     @rounds = Round.all
+    respond_with @rounds
   end
 
   # GET /rounds/1
   # GET /rounds/1.json
   def show
+    @rounds = Round.find(params[:id])
+    respond_with @round
   end
 
   # GET /rounds/new
@@ -19,46 +24,31 @@ class RoundsController < ApplicationController
 
   # GET /rounds/1/edit
   def edit
+    @round = Round.find(params[:id])
   end
 
   # POST /rounds
   # POST /rounds.json
   def create
     @round = Round.new(round_params)
-
-    respond_to do |format|
-      if @round.save
-        format.html { redirect_to @round, notice: 'Round was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @round }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @round.errors, status: :unprocessable_entity }
-      end
-    end
+    @round.save
+    respond_with @round
   end
 
   # PATCH/PUT /rounds/1
   # PATCH/PUT /rounds/1.json
   def update
-    respond_to do |format|
-      if @round.update(round_params)
-        format.html { redirect_to @round, notice: 'Round was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @round.errors, status: :unprocessable_entity }
-      end
-    end
+    @round = Round.find(params[:id])
+    @round.update_attributes(round_params)
+    respond_with @round
   end
 
   # DELETE /rounds/1
   # DELETE /rounds/1.json
   def destroy
+    @round = Round.find(params[:id])
     @round.destroy
-    respond_to do |format|
-      format.html { redirect_to rounds_url }
-      format.json { head :no_content }
-    end
+    respond_with @round
   end
 
   private
@@ -69,6 +59,6 @@ class RoundsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def round_params
-      params.require(:round).permit(:identifier, :startHole, :endHole, :score)
+      params.require(:round).permit(:identifier, :tee_id, :player_id, :course_id, :startHole, :endHole, :score)
     end
 end
