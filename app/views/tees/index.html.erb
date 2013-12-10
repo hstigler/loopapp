@@ -1,6 +1,7 @@
+<div class="container">
 <h1>Listing tees</h1>
 
-<table>
+<table class="table table-hover table-responsive table-bordered">
   <thead>
     <tr>
       <th>Id</th>
@@ -9,9 +10,6 @@
       <th>Distance</th>
       <th>Courserating</th>
       <th>Sloperating</th>
-      <th></th>
-      <th></th>
-      <th></th>
     </tr>
   </thead>
 
@@ -34,4 +32,6 @@
 
 <br>
 
-<%= link_to 'New Tee', new_tee_path %>
+<%= link_to 'New Tee', new_tee_path, :class=>"btn btn-primary" %>
+<%= link_to '.CSV', tees_path(format: "csv") , :class=>"btn btn-primary" %>
+</div>

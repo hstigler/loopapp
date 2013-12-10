@@ -1,7 +1,7 @@
 class FacilitiesController < ApplicationController
   before_action :set_facility, only: [:show, :edit, :update, :destroy]
   protect_from_forgery with: :null_session #fixed "Can't verify CSRF token authenticity error, however not sure if this opens up security hole"
-  respond_to :html, :json
+  respond_to :html, :json, :csv
   # GET /facilities
   # GET /facilities.json
   def index

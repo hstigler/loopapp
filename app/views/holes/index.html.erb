@@ -1,6 +1,7 @@
+<div class="container">
 <h1>Listing holes</h1>
 
-<table>
+<table class="table table-hover table-responsive table-bordered">
   <thead>
     <tr>
       <th>Id</th>
@@ -9,9 +10,6 @@
       <th>Number</th>
       <th>Par</th>
       <th>Handicap</th>
-      <th></th>
-      <th></th>
-      <th></th>
     </tr>
   </thead>
 
@@ -34,4 +32,6 @@
 
 <br>
 
-<%= link_to 'New Hole', new_hole_path %>
+<%= link_to 'New Hole', new_hole_path, :class=>"btn btn-primary" %>
+<%= link_to '.CSV', holes_path(format: "csv") , :class=>"btn btn-primary" %>
+</div>

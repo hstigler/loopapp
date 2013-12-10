@@ -1,7 +1,8 @@
 <div class="container">
 <h1>Listing clubs</h1>
 
-<table>
+
+<table class="table table-hover table-responsive table-bordered">
   <thead>
     <tr>
       <th>Id</th>
@@ -11,9 +12,6 @@
       <th>Model</th>
       <th>Order</th>
       <th>Name</th>
-      <th></th>
-      <th></th>
-      <th></th>
     </tr>
   </thead>
 
@@ -37,5 +35,6 @@
 
 <br>
 
-<%= link_to 'New Club', new_club_path %>
+<%= link_to 'New Club', new_club_path, :class=>"btn btn-primary" %>
+<%= link_to '.CSV', clubs_path(format: "csv") , :class=>"btn btn-primary" %>
 </div>

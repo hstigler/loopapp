@@ -1,0 +1,9 @@
+<%=
+response.content_type = 'application/tees'
+CSV.generate do |csv|
+	csv << ["ID", "IDENTIFIER", "NAME", "DISTANCE", "COURSERATING", "SLOPERATING"]
+	@tees.each do |tee|
+    csv << [ tee[:id], tee[:identifier], tee[:name], tee[:distance], tee[:courserating], tee[:sloperating]]
+  end
+end .html_safe
+%>

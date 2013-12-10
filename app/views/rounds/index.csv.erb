@@ -1,0 +1,9 @@
+<%=
+response.content_type = 'application/rounds'
+CSV.generate do |csv|
+	csv << ["ID", "IDENTIFIER", "PLAYER_ID", "COURSE_ID", "STARTHOLE", "ENDHOLE", "SCORE"]
+	@rounds.each do |round|
+    csv << [ round[:id], round[:identifier], round[:player_id], round[:course_id], round[:starthole], round[:endhole], round[:score] ]
+  end
+end .html_safe
+%>

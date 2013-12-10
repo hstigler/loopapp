@@ -1,6 +1,7 @@
+<div class="container">
 <h1>Listing shots</h1>
 
-<table>
+<table class="table table-hover table-responsive table-bordered">
   <thead>
     <tr>
       <th>Id</th>
@@ -14,9 +15,6 @@
       <th>Score</th>
       <th>Lie</th>
       <th>Time</th>
-      <th></th>
-      <th></th>
-      <th></th>
     </tr>
   </thead>
 
@@ -44,4 +42,6 @@
 
 <br>
 
-<%= link_to 'New Shot', new_shot_path %>
+<%= link_to 'New Shot', new_shot_path, :class=>"btn btn-primary" %>
+<%= link_to '.CSV', shots_path(format: "csv") , :class=>"btn btn-primary" %>
+</div>

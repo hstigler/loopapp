@@ -1,0 +1,9 @@
+<%=
+response.content_type = 'application/holes'
+CSV.generate do |csv|
+	csv << ["ID", "IDENTIFIER", "FACILITY_ID", "NUMBER", "PAR", "HANDICAP"]
+	@holes.each do |hole|
+    csv << [ hole[:id], hole[:identifier], hole[:facility_id], hole[:number], hole[:par], hole[:handicap]]
+  end
+end .html_safe
+%>

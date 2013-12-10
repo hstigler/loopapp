@@ -1,6 +1,7 @@
+<div class="container">
 <h1>Listing rounds</h1>
 
-<table>
+<table class="table table-hover table-responsive table-bordered">
   <thead>
     <tr>
       <th>Id</th>
@@ -11,9 +12,6 @@
       <th>Starthole</th>
       <th>Endhole</th>
       <th>Score</th>
-      <th></th>
-      <th></th>
-      <th></th>
     </tr>
   </thead>
 
@@ -22,9 +20,9 @@
       <tr>
         <td><%= round.id %></td>
         <td><%= round.identifier %></td>
-         <td><%= round.tee_id %></td>
-          <td><%= round.player_id %></td>
-           <td><%= round.course_id %></td>
+        <td><%= round.tee_id %></td>
+        <td><%= round.player_id %></td>
+        <td><%= round.course_id %></td>
         <td><%= round.startHole %></td>
         <td><%= round.endHole %></td>
         <td><%= round.score %></td>
@@ -38,4 +36,6 @@
 
 <br>
 
-<%= link_to 'New Round', new_round_path %>
+<%= link_to 'New Round', new_round_path, :class=>"btn btn-primary" %>
+<%= link_to '.CSV', rounds_path(format: "csv") , :class=>"btn btn-primary" %>
+</div>

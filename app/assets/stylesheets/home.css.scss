@@ -2,16 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body{
+body.homepage{
 	background-color: #000000;
 	background-image: image-url("insidehole.png");
 	background-size: cover;
 	background-position:center top;
 	background-repeat:no-repeat;
-
-	}
-
-.container{
-	margin-top: 100px;
-	margin-left: 15px;
 	}

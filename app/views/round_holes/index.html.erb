@@ -1,15 +1,13 @@
+<div class="container">
 <h1>Listing round_holes</h1>
 
-<table>
+<table class="table table-hover table-responsive table-bordered">
   <thead>
     <tr>
       <th>Id</th>
       <th>Identifier</th>
       <th>Round_id</th>
       <th>Hole_id</th>
-      <th></th>
-      <th></th>
-      <th></th>
     </tr>
   </thead>
 
@@ -30,4 +28,6 @@
 
 <br>
 
-<%= link_to 'New Round hole', new_round_hole_path %>
+<%= link_to 'New Round hole', new_round_hole_path, :class=>"btn btn-primary" %>
+<%= link_to '.CSV', round_holes_path(format: "csv") , :class=>"btn btn-primary" %>
+</div>

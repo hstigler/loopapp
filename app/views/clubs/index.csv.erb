@@ -1,0 +1,9 @@
+<%=
+response.content_type = 'application/clubs'
+CSV.generate do |csv|
+	csv << ["ID", "IDENTIFIER", "PLAYER_ID", "MAKE", "MODEL", "ORDER", "NAME"]
+	@clubs.each do |club|
+    csv << [ club[:id], club[:identifier], club[:player_id], club[:make], club[:model], club[:order], club[:name] ]
+  end
+end .html_safe
+%>
