@@ -1,11 +1,11 @@
-
-
 <body class="homepage">
+ <% if flash[:alert] %>
+    <div class="alert alert-success"><%= flash[:alert] %></div>
+  <% end %>
 <div class="homecontainer", id="jumbo">
 <div class="row">
 <div class="col-md-6">
 <div class="jumbotron">
-
   <h1>Loop Golf</h1>
   <p>Coming soon...</p>
   <p><a class="btn btn-primary btn-lg" role="button">Learn more</a></p>

@@ -52,6 +52,12 @@ class PlayersController < ApplicationController
     respond_with @player
   end
 
+  #Import CSV
+  def import
+    Player.import(params[:file])
+    redirect_to root_url, alert: "Players Imported"
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_player

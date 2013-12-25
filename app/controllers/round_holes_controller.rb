@@ -51,6 +51,12 @@ class RoundHolesController < ApplicationController
     respond_with @round_hole    
   end
 
+  #Import CSV
+  def import
+    RoundHole.import(params[:file])
+    redirect_to root_url, alert: "Round Holes Imported"
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_round_hole

@@ -38,4 +38,10 @@
 
 <%= link_to 'New Round', new_round_path, :class=>"btn btn-primary" %>
 <%= link_to '.CSV', rounds_path(format: "csv") , :class=>"btn btn-primary" %>
+
+<h2>Import Rounds</h2>
+<%= form_tag import_rounds_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import" %>
+<% end %>
 </div>

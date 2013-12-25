@@ -51,6 +51,12 @@ class TeesController < ApplicationController
     respond_with @tee
   end
 
+  #Import CSV
+  def import
+    Tee.import(params[:file])
+    redirect_to root_url, alert: "Tees Imported"
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_tee

@@ -51,6 +51,12 @@ class ShotsController < ApplicationController
     respond_with @shot
   end
 
+  #Import CSV
+  def import
+    Shot.import(params[:file])
+    redirect_to root_url, alert: "Shots Imported"
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_shot

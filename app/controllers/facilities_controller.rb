@@ -52,6 +52,12 @@ class FacilitiesController < ApplicationController
     respond_with @facility  
   end
 
+  #Import CSV
+  def import
+    Facility.import(params[:file])
+    redirect_to root_url, alert: "Facilities Imported"
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_facility

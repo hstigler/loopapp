@@ -37,4 +37,11 @@
 
 <%= link_to 'New Club', new_club_path, :class=>"btn btn-primary" %>
 <%= link_to '.CSV', clubs_path(format: "csv") , :class=>"btn btn-primary" %>
+
+<h2>Import Clubs</h2>
+
+<%= form_tag import_clubs_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import" %>
+<% end %>
 </div>

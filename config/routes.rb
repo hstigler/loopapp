@@ -1,22 +1,40 @@
 Loopapp::Application.routes.draw do
   get "home/index"
-  resources :players
+  resources :players do
+    collection {post :import}
+  end
 
-  resources :facilities
+  resources :facilities do
+    collection {post :import}
+  end
 
-  resources :holes
+  resources :holes do
+    collection {post :import}
+  end
 
-  resources :courses
+  resources :courses do
+    collection {post :import}
+  end
 
-  resources :tees
+  resources :tees do
+    collection {post :import}
+  end 
 
-  resources :rounds
+  resources :rounds do
+    collection {post :import}
+  end
 
-  resources :round_holes
+  resources :round_holes do
+    collection {post :import}
+  end
 
-  resources :shots
+  resources :shots do
+    collection {post :import}
+  end
 
-  resources :clubs
+  resources :clubs do
+    collection {post :import}
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

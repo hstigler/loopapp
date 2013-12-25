@@ -1,9 +1,9 @@
 <%=
 response.content_type = 'application/tees'
 CSV.generate do |csv|
-	csv << ["ID", "IDENTIFIER", "NAME", "DISTANCE", "COURSERATING", "SLOPERATING"]
+	csv << ["id", "identifier", "name", "distance", "courseRating", "slopeRating"]
 	@tees.each do |tee|
-    csv << [ tee[:id], tee[:identifier], tee[:name], tee[:distance], tee[:courserating], tee[:sloperating]]
+    csv << [ tee[:id], tee[:identifier], tee[:name], tee[:distance], tee[:courseRating], tee[:slopeRating]]
   end
 end .html_safe
 %>

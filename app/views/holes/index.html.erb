@@ -34,4 +34,10 @@
 
 <%= link_to 'New Hole', new_hole_path, :class=>"btn btn-primary" %>
 <%= link_to '.CSV', holes_path(format: "csv") , :class=>"btn btn-primary" %>
+
+<h2>Import Holes</h2>
+<%= form_tag import_holes_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import" %>
+<% end %>
 </div>

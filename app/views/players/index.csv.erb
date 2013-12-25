@@ -1,7 +1,7 @@
 <%=
 response.content_type = 'application/players'
 CSV.generate do |csv|
-	csv << ["ID", "IDENTIFIER", "FIRST_NAME", "LAST_NAME", "HANDICAP"]
+	csv << ["id", "identifier", "firstName", "lastName", "handicap"]
 	@players.each do |player|
     csv << [ player[:id], player[:identifier], player[:firstName], player[:lastName], player[:handicap]]
   end

@@ -34,4 +34,10 @@
 
 <%= link_to 'New Tee', new_tee_path, :class=>"btn btn-primary" %>
 <%= link_to '.CSV', tees_path(format: "csv") , :class=>"btn btn-primary" %>
+
+<h2>Import Tees</h2>
+<%= form_tag import_tees_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import" %>
+<% end %>
 </div>

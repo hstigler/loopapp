@@ -30,4 +30,10 @@
 
 <%= link_to 'New Player', new_player_path, :class=>"btn btn-primary" %>
 <%= link_to '.CSV', players_path(format: "csv") , :class=>"btn btn-primary" %>
+
+<h2>Import Players</h2>
+<%= form_tag import_players_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import" %>
+<% end %>
 </div>

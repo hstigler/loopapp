@@ -51,6 +51,12 @@ class RoundsController < ApplicationController
     respond_with @round
   end
 
+  #Import CSV
+  def import
+    Round.import(params[:file])
+    redirect_to root_url, alert: "Rounds Imported"
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_round
