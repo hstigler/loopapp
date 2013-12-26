@@ -1,16 +1,15 @@
 <div class="container">
-<h1>Listing rounds</h1>
+<h1>All Rounds</h1>
 
 <table class="table table-hover table-responsive table-bordered">
   <thead>
     <tr>
-      <th>Id</th>
-      <th>Identifier</th>
-      <th>Tee_id</th>
-      <th>Player_id</th>
-      <th>Course_id</th>
-      <th>Starthole</th>
-      <th>Endhole</th>
+      <th>ID</th>
+      <th>Tee ID</th>
+      <th>Player ID</th>
+      <th>Course ID</th>
+      <th>Start Hole</th>
+      <th>End Hole</th>
       <th>Score</th>
     </tr>
   </thead>
@@ -19,7 +18,6 @@
     <% @rounds.each do |round| %>
       <tr>
         <td><%= round.id %></td>
-        <td><%= round.identifier %></td>
         <td><%= round.tee_id %></td>
         <td><%= round.player_id %></td>
         <td><%= round.course_id %></td>

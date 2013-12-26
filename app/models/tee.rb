@@ -1,4 +1,5 @@
 class Tee < ActiveRecord::Base
+	belongs_to :course
 	has_many :rounds
 
 	def self.import(file)

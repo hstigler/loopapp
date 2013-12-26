@@ -65,6 +65,6 @@ class TeesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tee_params
-      params.require(:tee).permit(:identifier, :name, :distance, :courseRating, :slopeRating)
+      params.require(:tee).permit(:course_id, :name, :distance, :courseRating, :slopeRating)
     end
 end

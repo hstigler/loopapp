@@ -1,9 +1,9 @@
 <%=
 response.content_type = 'application/holes'
 CSV.generate do |csv|
-	csv << ["id", "identifier", "facility_id", "number", "par", "handicap"]
+	csv << ["id", "course_id", "number", "par", "handicap"]
 	@holes.each do |hole|
-    csv << [ hole[:id], hole[:identifier], hole[:facility_id], hole[:number], hole[:par], hole[:handicap]]
+    csv << [ hole[:id], hole[:course_id], hole[:number], hole[:par], hole[:handicap]]
   end
 end .html_safe
 %>

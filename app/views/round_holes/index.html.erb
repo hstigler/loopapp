@@ -1,13 +1,12 @@
 <div class="container">
-<h1>Listing round_holes</h1>
+<h1>All Round Holes</h1>
 
 <table class="table table-hover table-responsive table-bordered">
   <thead>
     <tr>
-      <th>Id</th>
-      <th>Identifier</th>
-      <th>Round_id</th>
-      <th>Hole_id</th>
+      <th>ID</th>
+      <th>Round ID</th>
+      <th>Hole ID</th>
     </tr>
   </thead>
 
@@ -15,7 +14,6 @@
     <% @round_holes.each do |round_hole| %>
       <tr>
         <td><%= round_hole.id %></td>
-        <td><%= round_hole.identifier %></td>
         <td><%= round_hole.round_id %></td>
         <td><%= round_hole.hole_id %></td>
         <td><%= link_to 'Show', round_hole %></td>

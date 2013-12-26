@@ -1,15 +1,15 @@
 <div class="container">
-<h1>Listing tees</h1>
+<h1>All Tees</h1>
 
 <table class="table table-hover table-responsive table-bordered">
   <thead>
     <tr>
-      <th>Id</th>
-      <th>Identifier</th>
+      <th>ID</th>
+      <th>Course ID</th>
       <th>Name</th>
       <th>Distance</th>
-      <th>Courserating</th>
-      <th>Sloperating</th>
+      <th>Course Rating</th>
+      <th>Slope Rating</th>
     </tr>
   </thead>
 
@@ -17,7 +17,7 @@
     <% @tees.each do |tee| %>
       <tr>
         <td><%= tee.id %></td>
-        <td><%= tee.identifier %></td>
+        <td><%= tee.course_id %></td>
         <td><%= tee.name %></td>
         <td><%= tee.distance %></td>
         <td><%= tee.courseRating %></td>

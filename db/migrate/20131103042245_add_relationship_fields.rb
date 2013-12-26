@@ -30,7 +30,11 @@ class AddRelationshipFields < ActiveRecord::Migration
   	add_index :courses, :facility_id
 
   	#Add to Hole
-  	add_column :holes, :facility_id, :integer
-  	add_index :holes, :facility_id
+  	add_column :holes, :course_id, :integer
+  	add_index :holes, :course_id
+
+    #Add to Tee
+    add_column :tees, :course_id, :integer
+    add_index :tees, :course_id
   end
 end

@@ -65,6 +65,6 @@ class HolesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def hole_params
-      params.require(:hole).permit(:identifier, :facility_id, :number, :par, :handicap)
+      params.require(:hole).permit(:course_id, :number, :par, :handicap)
     end
 end

@@ -65,6 +65,6 @@ class RoundHolesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def round_hole_params
-      params.require(:round_hole).permit(:identifier, :round_id, :hole_id)
+      params.require(:round_hole).permit(:round_id, :hole_id)
     end
 end

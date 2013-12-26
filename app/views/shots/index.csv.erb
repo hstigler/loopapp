@@ -1,9 +1,9 @@
 <%=
 response.content_type = 'application/shots'
 CSV.generate do |csv|
-	csv << ["id", "identifier", "club_id", "round_hole_id", "startLat", "startLon", "endLat", "endLon", "score", "lie", "time"]
+	csv << ["id", "club_id", "round_hole_id", "startLat", "startLon", "endLat", "endLon", "score", "lie", "time"]
 	@shots.each do |shot|
-    csv << [ shot[:id], shot[:identifier], shot[:club_id], shot[:round_hole_id], shot[:startLat], shot[:startLon], shot[:endLat], shot[:endLon], shot[:score], shot[:lie], shot[:time] ]
+    csv << [ shot[:id], shot[:club_id], shot[:round_hole_id], shot[:startLat], shot[:startLon], shot[:endLat], shot[:endLon], shot[:score], shot[:lie], shot[:time] ]
   end
 end .html_safe
 %>

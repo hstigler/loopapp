@@ -4,14 +4,13 @@
 <table class="table table-hover table-responsive table-bordered">
   <thead>
     <tr>
-      <th>Id</th>
-      <th>Identifier</th>
-      <th>Club_id</th>
-      <th>Round_hole_id</th>
-      <th>Startlat</th>
-      <th>Startlon</th>
-      <th>Endlat</th>
-      <th>Endlon</th>
+      <th>ID</th>
+      <th>Club ID</th>
+      <th>Round Hole ID</th>
+      <th>Start Lat</th>
+      <th>Start Lon</th>
+      <th>End Lat</th>
+      <th>End Lon</th>
       <th>Score</th>
       <th>Lie</th>
       <th>Time</th>
@@ -22,7 +21,6 @@
     <% @shots.each do |shot| %>
       <tr>
         <td><%= shot.id %></td>
-        <td><%= shot.identifier %></td>
         <td><%= shot.club_id %></td>
         <td><%= shot.round_hole_id %></td>
         <td><%= shot.startLat %></td>

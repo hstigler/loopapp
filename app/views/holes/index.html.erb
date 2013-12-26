@@ -1,12 +1,11 @@
 <div class="container">
-<h1>Listing holes</h1>
+<h1>All Holes</h1>
 
 <table class="table table-hover table-responsive table-bordered">
   <thead>
     <tr>
-      <th>Id</th>
-      <th>Identifier</th>
-      <th>Facility_id</th>
+      <th>ID</th>
+      <th>Course ID</th>
       <th>Number</th>
       <th>Par</th>
       <th>Handicap</th>
@@ -17,8 +16,7 @@
     <% @holes.each do |hole| %>
       <tr>
         <td><%= hole.id %></td>
-        <td><%= hole.identifier %></td>
-        <td><%= hole.facility_id %></td>
+        <td><%= hole.course_id %></td>
         <td><%= hole.number %></td>
         <td><%= hole.par %></td>
         <td><%= hole.handicap %></td>

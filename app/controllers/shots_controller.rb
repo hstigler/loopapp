@@ -65,6 +65,6 @@ class ShotsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def shot_params
-      params.require(:shot).permit(:identifier, :club_id, :round_hole_id, :startLat, :startLon, :endLat, :endLon, :score, :lie, :time)
+      params.require(:shot).permit(:club_id, :round_hole_id, :startLat, :startLon, :endLat, :endLon, :score, :lie, :time)
     end
 end
